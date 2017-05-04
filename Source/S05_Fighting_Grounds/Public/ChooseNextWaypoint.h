@@ -14,6 +14,16 @@ class S05_FIGHTING_GROUNDS_API UChooseNextWaypoint : public UBTTaskNode
 	GENERATED_BODY()
 public:
 		virtual EBTNodeResult::Type ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory) override;
+
+protected:
+	UPROPERTY(EditAnywhere, Category = "Blackboard")
+		struct FBlackboardKeySelector IndexKey;
+
+	UPROPERTY(EditAnywhere, Category = "Blackboard")
+		struct FBlackboardKeySelector WaypointKey;
+
+private:
+	TArray<AActor*> PatrolPoints;
 	
 	
 };
